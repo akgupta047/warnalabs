@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(89, 84, 84);
+    font-family: 'Teko', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    border: 10px solid black;
+    max-width: 100vw;
+    overflow: hidden;
+    position: relative; /* Add this */
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    z-index: 2; /* Ensure navbar stays above the background */
+    background-color: transparent; /* Make navbar transparent */
+}
+
+#logo img {
+    width: 250px;
+    height: auto;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+#navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0;
+    padding: 0;
+}
+
+#navbar ul li {
+    list-style: none;
+    margin: 5px 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#navbar ul li a {
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Home Section */
+#home {
+    padding: 20px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 10px solid black;
+    position: relative;
+    min-height: 300px; /* Add a minimum height */
+}
+
+#home::before {
+    content: "";
+    background-image: url('bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Lower than navbar but covers the home section */
+    opacity: 0.75;
+}
+
+#home p {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    position: relative;
+    margin: 0;
+    z-index: 2; /* Ensure text stays above the background */
+}
+
+/* Devices Section */
+.card-container {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgb(6, 6, 6);
+}
+
+.heading h1 {
+    font-size: 30px;
+    margin: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.crd {
+    width: 100%;
+    max-width: 400px;
+}
+
+.crd img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* Team Section */
+.team_section {
+    width: 100%;
+    min-height: 400px;
+    background-image: url('teem.png');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 10px solid black;
+    padding: 20px;
+    position: relative;
+}
+
+.crdText {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    text-align: right;
+    color: white;
+    padding: 10px;
+}
+
+.crdText h6 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.crdText h4 {
+    font-size: 24px;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.crdText h5 {
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* Company Section */
+.company_section {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #757070;
+    border-bottom: 10px solid black;
+}
+
+.company_section p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Contact Section */
+.contact {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: rgb(53, 52, 52);
+}
+
+.contactus h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.contactText {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contactText h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contactText p {
+    font-size: 16px;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Modal */
+.modal-content {
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    #navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    #navbar ul {
+        margin-right: 20px;
+    }
+
+    #home {
+        height: 470px;
+    }
+
+    #home p {
+        font-size: 36px;
+        right: 40px;
+        bottom: 100px;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .crd {
+        max-width: 300px;
+    }
+
+    .crdText h4 {
+        font-size: 36px;
+    }
+
+    .boxes {
+        gap: 20px;
+    }
+
+    #box {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #home p {
+        font-size: 47px;
+    }
+
+    .card {
+        gap: 30px;
+    }
+
+    .crd {
+        max-width: 400px;
+    }
+
+    .crdText h4 {
+        font-size: 47px;
+    }
+
+    #box {
+        width: 150px;
+        height: 150px;
+    }
+}
